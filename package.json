@@ -19,8 +19,7 @@
     "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.1.126",
-    "@iconify-json/simple-icons": "^1.1.70",
+    "@iconify/json": "^1.1.126",
     "daisyui": "^3.7.3",
     "unplugin-icons": "^0.17.0"
   }
