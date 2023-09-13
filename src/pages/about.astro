@@ -1,121 +1,129 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
+import Layout from '../layouts/BlogPost.astro';
+import CodeIcon from '~icons/lucide/code-2';
+import GymIcon from '~icons/lucide/dumbbell';
+import BoardgameIcon from '~icons/simple-icons/boardgamegeek';
 ---
 
-<BaseLayout title="About | Nicolas Goldack" description="About Nicolas Goldack Lorem Ipsum">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Nicolas Goldack at work with a colleague"
-				/>
-			</Hero>
+<Layout
+	title="About Me"
+	description="Some information about me."
+	pubDate={new Date('September 13 2023')}
+	heroImage="/blog-placeholder-about.jpg"
+>
+	<h1 class="text-3xl pb-4">Introduction</h1>
+	<p>
+		Greetings, and welcome to my digital abode! 
+		My name is Nicolas, and I'm a Software Engineer who is deeply passionate about all things related to technology and coding. 
+	</p>
+	<p>
+		I was born and raised in Germany, a nation renowned for its engineering prowess and innovative spirit — traits I aim to embody in my professional and personal life.
+	</p>
+	<p>
+		I'm currently employed as a Fullstack Engineer at <a class="link" href="https://www.arag.de">ARAG</a>, the industry-leading legal insurance company. 
+		My role here is multi-faceted: not only do I get to dive deep into challenging engineering tasks, but I also have the honor of wearing the hat of an Instructor. 
+		In this role, I mentor apprentices, offering them the guidance, knowledge, and hands-on experience they need to flourish in the fast-evolving world of software engineering. 
+		There's a special kind of fulfillment in helping the next generation of engineers grow and prosper. 
+	</p>
 
-			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl
-						condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu
-						odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum
-						dui faucibus in ornare.
-					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
-				</div>
-			</section>
-		</main>
+	<span class="divider"></span>
 
-		<ContactCTA />
+	<div>
+		<h1 class="text-3xl pb-4">Skills</h1>
+
+		<div class="grid grid-cols-6 items-center gap-1">
+			<div class="col-start-2">
+				<span class="text-xs">Beginner</span>
+			</div>
+			<div class="col-start-4 text-center">
+				<span class="text-xs">Intermediate</span>
+			</div>
+			<div class="col-start-6 text-end">
+				<span class="text-xs">Professional</span>
+			</div>
+
+
+			<div class="col-start-1">
+				<span class="text-xl">Go</span>
+			</div>
+			<div class="col-span-5">
+				<progress class="progress h-3 progress-primary w-full" value="100" max="100"></progress>
+			</div>
+			<div class="col-start-1">
+				<span class="text-xl">Java</span>
+			</div>
+			<div class="col-span-5">
+				<progress class="progress h-3 progress-primary w-full" value="100" max="100"></progress>
+			</div>
+			<div class="col-start-1">
+				<span class="text-xl">Rust</span>
+			</div>
+			<div class="col-span-5">
+				<progress class="progress h-3 progress-primary w-full" value="10" max="100"></progress>
+			</div>
+			<div class="col-start-1">
+				<span class="text-xl">Python</span>
+			</div>
+			<div class="col-span-5">
+				<progress class="progress h-3 progress-primary w-full" value="50" max="100"></progress>
+			</div>
+		</div>
 	</div>
-</BaseLayout>
 
-<style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+	<span class="divider"></span>
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+	<h1 class="text-3xl pb-4">
+		Professional Journey
+	</h1>
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+	<span class="divider"></span>
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+	<h1 class="text-3xl pb-4">
+		Interests & Hobbies
+	</h1>
 
-	.content {
-		grid-column: 2 / 4;
-	}
+	<p>
+		When I'm not immersed in lines of code or tinkering with new technologies, I like to diversify my interests to keep a balanced life.
+	</p>
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+	<h2 class="text-2xl flex gap-2 items-center">
+		<CodeIcon />
+		Coding
+	</h2>
 
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
+	<p>
+		Yes, my job is also my hobby. 
+		I often find myself lost in personal projects or contributing to open-source endeavors. 
+		Whether it's building a new app or creating a library for public use, the process of transforming an idea into something functional is incredibly rewarding for me.
+	</p>
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+	<h2 class="text-2xl flex gap-2 items-center">
+		<GymIcon />
+		Gym
+	</h2>
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+	<p>
+		Working out is not just a routine; it's a lifestyle choice for me. 
+		Spending time at the gym helps me focus better and keeps my energy levels high. It's my form of active meditation.
+	</p>
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
-</style>
+	<h2 class="text-2xl flex gap-2 items-center">
+		<BoardgameIcon />
+		Board Games
+	</h2>
+
+	<p>
+		You'll often find me huddled around a board game with my friends. 
+		It's not just about the competition; it's about strategizing, thinking ahead, and most importantly, having fun. 
+		<!--From classics like "Settlers of Catan" to newer hits like "Codenames," I'm always eager to play.-->
+	</p>
+
+	<span class="divider"></span>
+
+	<p>
+		By combining my professional aspirations with my hobbies, I strive to lead a life rich in experiences and learning. 
+		Whether I'm debugging code, lifting weights, or strategizing my way to victory in a board game, each activity offers its own set of challenges and rewards. 
+		This multifaceted approach to life not only keeps things interesting but also contributes to making me a well-rounded individual.
+		Feel free to explore the rest of this page to know more about my skill set, professional journey, and other aspects that make up the person I am. 
+	</p>
+</Layout>

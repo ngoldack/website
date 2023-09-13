@@ -1,73 +1,51 @@
 ---
-import Icon from './Icon.astro';
-const currentYear = new Date().getFullYear();
+const today = new Date();
+
+import XIcon from '~icons/simple-icons/x';
+import GithubIcon from '~icons/simple-icons/github';
+import LinkedInIcon from '~icons/simple-icons/linkedin';
+import AstroIcon from '~icons/simple-icons/astro';
 ---
 
 <footer>
-	<div class="group">
-		<p>
-			Designed & Developed in Dinslaken with <a href="https://astro.build/">Astro</a>
-			<Icon icon="rocket-launch" size="1.2em" />
-		</p>
-		<p>&copy; {currentYear} Nicolas Goldack</p>
+	<div class="flex justify-center w-full">
+		&copy; {today.getFullYear()} Nicolas Goldack. All rights reserved.
+		Created with
+		<a href="https://astro.build" class="flex items-center pl-1"><AstroIcon class="text-sm" /></a>
 	</div>
-	<p class="socials">
-		<a href="https://twitter.com/me"> X</a>
-		<a href="https://github.com/ngoldack"> GitHub</a>
-	</p>
+	<div class="social-links">
+		<a href="https://twitter.com/nicolas_goldack" target="_blank">
+			<span class="sr-only">Follow nicolas on twitter</span>
+			<XIcon />
+		</a>
+		<a href="https://github.com/ngoldack" target="_blank">
+			<span class="sr-only">Nicolas' github page</span>
+			<GithubIcon />
+		</a>
+		<a href="https://www.linkedin.com/in/nicolas-goldack/" target="_blank">
+			<span class="sr-only">Nicolas' linkedin page</span>
+			<LinkedInIcon />
+		</a>
+	</div>
 </footer>
 <style>
 	footer {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-		margin-top: auto;
-		padding: 3rem 2rem 3rem;
+		padding: 2em 1em 6em 1em;
+		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		color: rgb(var(--gray));
 		text-align: center;
-		color: var(--gray-400);
-		font-size: var(--text-sm);
 	}
-
-	footer a {
-		color: var(--gray-400);
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	footer a:hover,
-	footer a:focus {
-		text-decoration-color: currentColor;
-	}
-
-	.group {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
-	.socials {
+	.social-links {
 		display: flex;
 		justify-content: center;
-		gap: 1rem;
-		flex-wrap: wrap;
+		gap: 1em;
+		margin-top: 1em;
 	}
-
-	@media (min-width: 50em) {
-		footer {
-			flex-direction: row;
-			justify-content: space-between;
-			padding: 2.5rem 5rem;
-		}
-
-		.group {
-			flex-direction: row;
-			gap: 1rem;
-			flex-wrap: wrap;
-		}
-
-		.socials {
-			justify-content: flex-end;
-		}
+	.social-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+	}
+	.social-links a:hover {
+		color: rgb(var(--gray-dark));
 	}
 </style>

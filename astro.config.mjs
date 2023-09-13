@@ -1,21 +1,25 @@
-import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/static'; // ++
-import tailwind from '@astrojs/tailwind';
-import markdoc from '@astrojs/markdoc';
-import Icons from 'unplugin-icons/vite';
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
+import Icons from "unplugin-icons/vite";
+
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-	output: 'static',
-	adapter: vercel({
-		analytics: true,
-	}),
-	integrations: [tailwind(), markdoc()],
-	vite: {
-		plugins: [
-			Icons({
-				compiler: 'astro',
-			}),
-		],
-	},
+  site: "https://www.ngoldack.de",
+  integrations: [mdx(), sitemap(), tailwind()],
+  vite: {
+    plugins: [
+      Icons({
+        compiler: "astro",
+      }),
+    ],
+  },
+  output: "hybrid",
+  adapter: vercel({
+    analytics: true,
+    imageService: true,
+  }),
 });
