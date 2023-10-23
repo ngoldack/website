@@ -7,20 +7,21 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "update": "bunx npm-check-updates@latest --interactive --format group"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.0.3",
+    "@astrojs/mdx": "^1.1.2",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.0",
-    "@astrojs/tailwind": "^5.0.0",
-    "@astrojs/vercel": "^4.0.5",
-    "astro": "^3.0.13",
-    "tailwindcss": "^3.0.24"
+    "@astrojs/sitemap": "^3.0.2",
+    "@astrojs/tailwind": "^5.0.2",
+    "@astrojs/vercel": "^5.0.2",
+    "astro": "^3.3.3",
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
-    "@iconify/json": "^1.1.126",
-    "daisyui": "^3.7.3",
-    "unplugin-icons": "^0.17.0"
+    "@iconify/json": "^2.2.132",
+    "daisyui": "^3.9.3",
+    "unplugin-icons": "^0.17.1"
   }
 }
